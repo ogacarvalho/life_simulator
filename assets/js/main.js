@@ -57,7 +57,7 @@ const conta = () => {
         return `R$ ${random(0,10) * random(1,3)}`
     }
     if(sorte == 'neutro'){
-        return `R$ ${random(0, 10) * random(1,300)}`
+        return `R$ ${random(0, 10) * random(1,3000)}`
     }else{
         return `R$ ${random(1000,100000) * random(1,100)}`
     }
@@ -74,4 +74,11 @@ const vida = (sorte) => {
 };
 
 let pessoa = vida(sorte)
-console.log(pessoa);
+let inicio = document.querySelector('h1');
+inicio.innerHTML = `Pessoa: ${pessoa.nome}<br><br>
+Sorte: ${pessoa.sorte}<br><br>
+Idade: ${pessoa.idade}<br><br>
+Condição Socia: ${pessoa.social}<br><br>
+Valor no banco: ${pessoa.banco}`;
+
+
